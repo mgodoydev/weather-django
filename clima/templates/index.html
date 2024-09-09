@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <h2 class="card-title mb-4 text-center">Weather Search</h2>
+                        <form method="POST">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="city" class="form-label fw-bold">City</label>
+                                <input type="text" id="city" name="city" class="form-control" placeholder="Enter city" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Get Weather</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
